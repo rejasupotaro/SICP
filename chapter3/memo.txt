@@ -1,0 +1,25 @@
+Scheme 
+. : 可変長引数
+cell : 長さ1のリスト
+test-and-set! : atomicでないので二つのプロセスが同時にくると死ぬ。SchemeではできないCAS命令を使わなければならない。
+
+すべてのアクセスを弾く必要があるのか
+shared lock / exclusive lock : ロックの種類、読み取りのロックと書き込みのロック
+mvcc : マルチバージョンコンカレンシー、バージョン管理するような感じで読み取りと書き込みが競合しなくなる。
+
+直列化をする必要があるのか
+isolation level:
+  Read Uncommited
+  Read Commited
+  Repeatable Read
+  Serializable
+
+デッドロック対策 : シリアライズの順番を決める
+
+deadlock recovery : デッドロックは回避不可能だと知られている。でもデッドロックし続けると困るので回復方法も用意。
+
+シリアライズ以外の方法で並列に実行したい。
+バリア同期
+
+
+
